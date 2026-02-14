@@ -16,129 +16,90 @@ const props = withDefaults(defineProps<SidebarProps>(), {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "M.Omair Sohail",
+    email: "omairmedia2020@google.com",
     avatar: "https://placehold.co/600x400",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: 'radix-icons:view-vertical',
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: 'radix-icons:speaker-loud',
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: 'radix-icons:server',
-      plan: "Free",
-    },
-  ],
   navMain: [
     {
-      title: "Playground",
-      url: "#",
-      icon: 'radix-icons:square',
+      title: "About",
+      url: "/about",
+      icon: 'radix-icons:person',
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: 'radix-icons:discord-logo',
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: 'radix-icons:discord-logo',
-      items: [
-        {
           title: "Introduction",
-          url: "#",
+          url: "/about/introduction",
         },
         {
-          title: "Get Started",
-          url: "#",
+          title: "Skills",
+          url: "/about/skills",
         },
         {
-          title: "Tutorials",
-          url: "#",
+          title: "Experience",
+          url: "/about/experience",
+        },
+      ],
+    },
+    {
+      title: "Projects",
+      url: "/projects",
+      isActive: true,
+      icon: 'radix-icons:layers',
+      items: [
+        {
+          title: "Manage",
+          url: "/projects/manage",
         },
         {
-          title: "Changelog",
-          url: "#",
+          title: "List",
+          url: "/projects/list",
+        },
+      ],
+    },
+    {
+      title: "Dashboard",
+      url: "/dashboard",
+      isActive: true,
+      icon: 'radix-icons:dashboard',
+      items: [
+        {
+          title: "Analytics",
+          url: "/dashboard/analytics",
+        },
+      ],
+    },
+    {
+      title: "Blogs",
+      url: "/blogs",
+      isActive: true,
+      icon: 'radix-icons:file',
+      items: [
+        {
+          title: "Manage",
+          url: "/blogs/manage",
+        },
+        {
+          title: "View",
+          url: "/blogs/list",
         },
       ],
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
+      isActive: true,
       icon: 'radix-icons:gear',
       items: [
         {
           title: "General",
-          url: "#",
+          url: "/settings/general",
         },
         {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
+          title: "Notifications",
+          url: "/settings/notifications",
         },
       ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: 'radix-icons:frame',
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: 'radix-icons:pie-chart',
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: 'radix-icons:drawing-pin',
     },
   ],
 }
@@ -147,11 +108,11 @@ const data = {
 <template>
   <Sidebar v-bind="props">
     <SidebarHeader>
-      <SharedTeamSwitcher :teams="data.teams" />
+      <SharedTeamSwitcher />
     </SidebarHeader>
     <SidebarContent>
       <SharedNavMain :items="data.navMain" />
-      <SharedNavProjects :projects="data.projects" />
+      <!-- <SharedNavProjects :projects="data.projects" /> -->
     </SidebarContent>
     <SidebarFooter>
       <SharedNavUser :user="data.user" />

@@ -1,11 +1,11 @@
 <template>
     <div>
-        <h1>Team</h1>
+        <h1>Dashboard-Analytics</h1>
     </div>
 </template>
 <script setup lang="ts">
 definePageMeta({
-    name: 'Team',
-    layout: 'default'
+    name: 'Dashboard Analytics',
+    layout:'default'
 })
 </script>

@@ -4,7 +4,9 @@
       <SharedAppSidebar />
       <main class="w-full">
          <SharedAppHeader />
-         <slot />
+         <div class="p-4">
+            <slot />
+         </div>
       </main>
    </SidebarProvider>
    </div>

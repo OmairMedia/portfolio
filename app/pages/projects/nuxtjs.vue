@@ -1,11 +1,11 @@
 <template>
     <div>
-        <h1>Analytics</h1>
+        <h1>Projects - Nuxt js</h1>
     </div>
 </template>
 <script setup lang="ts">
 definePageMeta({
-    name: 'Analytics',
+    name: 'Projects Nuxt',
     layout:'default'
 })
 </script>

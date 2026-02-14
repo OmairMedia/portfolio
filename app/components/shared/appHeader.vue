@@ -6,15 +6,14 @@
             <Separator orientation="vertical" class="mr-2 data-[orientation=vertical]:h-4" />
             <Breadcrumb>
                 <BreadcrumbList>
-                    <BreadcrumbItem class="hidden md:block">
-                        <BreadcrumbLink href="#">
-                            Building Your Application
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator class="hidden md:block" />
-                    <BreadcrumbItem>
-                        <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                    </BreadcrumbItem>
+                    <template v-for="(crumb, index) in breadcrumbs" :key="index">
+                        <BreadcrumbItem class="hidden md:block">
+                            <BreadcrumbLink>
+                                {{ crumb.label }}
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator v-if="index < breadcrumbs.length - 1" class="hidden md:block" />
+                    </template>
                 </BreadcrumbList>
             </Breadcrumb>
         </div>
@@ -61,7 +60,14 @@ import {
     BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { Separator } from '@/components/ui/separator'
+import { generateBreadcrumbs } from '@/lib/utils'
 const colorMode = useColorMode()
+const route = useRoute()
 
+const activeRoute = ref(route.path)
 
+// Transform Route Path into Breadcrumb
+const breadcrumbs = computed(() =>
+    generateBreadcrumbs(route.path)
+)
 </script>

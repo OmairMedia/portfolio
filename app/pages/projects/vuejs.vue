@@ -1,11 +1,11 @@
 <template>
     <div>
-        <h1>Notifications</h1>
+        <h1>Projects - Vue js</h1>
     </div>
 </template>
 <script setup lang="ts">
 definePageMeta({
-    name: 'Notifications',
+    name: 'Projects Vue',
     layout:'default'
 })
 </script>

@@ -8,7 +8,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/icon',
-    '@nuxt/fonts'
+    '@nuxt/fonts',
+    '@nuxt/content',
+    '@nuxt/image',
+    '@pinia/nuxt'
   ],
   shadcn: {
     /**
@@ -27,9 +30,12 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
-   fonts: {
+  fonts: {
     families: [
       { name: 'Poppins', provider: 'google'}
     ]
+  },
+  pinia: {
+        storesDirs: ['app/stores/**']
   }
 })
