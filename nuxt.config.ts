@@ -3,13 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: [
+    '@nuxt/content',
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/icon',
     '@nuxt/fonts',
-    '@nuxt/content',
     '@nuxt/image',
     '@pinia/nuxt'
   ],
@@ -37,5 +37,16 @@ export default defineNuxtConfig({
   },
   pinia: {
         storesDirs: ['app/stores/**']
-  }
+  },
+  runtimeConfig: {
+    resendApiKey: '',
+    contactFromEmail: '',
+    contactToEmail: '',
+  },
+  // content: {
+  //   database: {
+  //     type: 'sqlite',
+  //     filename: 'content.db'
+  //   }
+  // }
 })
